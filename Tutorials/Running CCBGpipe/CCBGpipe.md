@@ -75,6 +75,7 @@ Installation
  > * pyfastaq
 
 ## Quick usage
+
 - To extract fastq (joinedreads.fastq) and fast5 files using extract.py. Joinedreads.fastq and fast5 files are both produced in the directory (outpath/fast5/barcodeXX/).
 
 ``extract.py path-to-raw_reads outpath (e.g., extract.py raw-reads albacore)``
@@ -104,6 +105,22 @@ Installation
 ``finalize.py outpath (e.g., finalize.py ../results)``
 
 ## Basecalling with Guppy instead of Albacore
+
+#Running with guppy
+
+
+   ``
+   ./opt/ont-guppy-cpu/bin/guppy_basecaller -i path to raw reads -s outputpath
+   ``
+ -  or
+  
+  ``
+   cd /opt/ont-guppy-cpu/bin
+  ``
+  ``
+     ./guppy_bascaller
+ ``    
+
 - To extract fastq files using guppy_bascaller
 
 ``guppy_basecaller -i path-to-raw_reads -s outpath (e.g., guppy_basecaller -i Fast5 -s guppy_out)``
