@@ -106,7 +106,7 @@ Installation
 
 ## Basecalling with Guppy instead of Albacore
 
-#Running with guppy
+### Running with guppy
 
 
    ``
