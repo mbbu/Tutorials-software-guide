@@ -11,5 +11,6 @@
      
 ### Basic R session
  - Log into  studio 
- ![](/images/rtudio.png)
+ ![](/Tutorials/images/rstudiologin.png)
  
+ - go to tools 
