@@ -4,10 +4,10 @@ This tutorial will get you up and running with Conda and Bioconda.
 
 For an introductory set of slides on Conda and Bioconda see [here](https://docs.google.com/presentation/d/e/2PACX-1vQ8gPzQ8bv5pJJtPAd3e0fe4pt2grnVwtGuoJBcao6RaS-IpiNLnV0nanQAYNGKpPs3wn4iKoIKSsck/pub?start=false&loop=false&delayms=3000)
 
-### Today we are going to:
+### Today, we are going to:
 
 1. Install Conda via the Miniconda distribution
-2. Learn about activation of the base conda environment
+2. Learn about the activation of the base conda environment
 3. Configure Conda with Software "Channels"
 4. Learn how to:
     * install tools using conda
@@ -36,11 +36,11 @@ or
 
 Don't type in the `>$` or the `(base) >$`! *It's just the representation of the prompt in the tutorial document...*
 
-Ok, lets go.
+Ok, let's go.
 
 ## 1. Install Conda *via* the Miniconda distribution.
 
-First thing we have to do is download the installer from the Miniconda documentation website.
+The first thing we have to do is download the installer from the Miniconda documentation website.
 
 SSH Login to your Linux server
 
@@ -50,7 +50,7 @@ Then from your HOME directory:
 >$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 ```
 
-Now we can install it, we will use the `-b` and `-s` switches for *silent mode* and *no post install scripts* respectively.
+Now we can install it; we will use the `-b` and `-s` switches for *silent mode* and *no post install scripts* respectively.
 
 ```
 
@@ -100,31 +100,31 @@ installation finished.
 
 ## 2. Activate the Conda base environment
 
-Now that we have installed Conda we need to be able to use it.
+Now that we have installed Conda, we need to be able to use it.
 
 In a very similar way to activating a Python virtual environment, we need to ***activate*** conda before we can use it.
 
 We do this by pointing the `source` command at the conda activate script.
 
-**NOTE: You need to do this EVERY time you login to your server if you want to use tools you installed with Conda.**
+**NOTE: You need to do this EVERY time you log in to your server if you want to use tools you installed with Conda.**
 
 ```
 >$ source ~/miniconda3/bin/activate
 ```
 
-You'll notice that your command line now has an added `(base)` in front of it. This lets you know that Conda has been activated and you can use it. Later on, when we start using other conda environments it will tell us which one we are in!
+You'll notice that your command line now has an added `(base)` in front of it. This lets you know that Conda has been activated and you can use it. Later on, when we start using other conda environments, it will tell us which one we are in!
 
 ## 3. Configure Conda with software "Channels"
 
-Now we want to configure Conda with some extra software channels. We especially want to tell Conda where it can find all those awesome Bioinformatics tools we really want to use are.
+Now we want to configure Conda with some extra software channels. We especially want to tell Conda where it can find all those excellent Bioinformatics tools we want to use are.
 
-So we need to add three "Channels" to conda's configurtation. They are:
+So we need to add three "Channels" to conda's configuration. They are:
 
 * defaults - base packages for Conda
 * bioconda - >8000 Bioinformatics tools and growing daily
 * conda-forge - has most of the dependencies for all our favourite tools
 
-We add the channels with the `conda config` command. The order in which we add the channels is very important. It will determine the order in which conda will search them for the appropriate packages. It's strange but the last one we add will have the highest priority. We want `conda-forge` to have the highest priority so we add it last...
+We add the channels with the `conda config` command. The order in which we add the channels is critical. It will determine the order in which conda will search them for the appropriate packages. It's strange, but the last one we add will have the highest priority. We want `conda-forge` to have the highest priority, so we add it last...
 
 ```
 (base) >$ conda config --add channels defaults
@@ -161,7 +161,7 @@ To do that we use the `conda install <package-name>` command.
 
 Conda will work out all the things it needs to install as well as samtools to make sure it works.
 
-You'll see a whole lot of stuff, but then conda will ask you if you REALLY want to install `bwa`. Take note of all the other things it has to install.. Look closely, sometimes it may tell you it has to REMOVE things to be able to install what you want due to an incompatibility.
+You'll see a whole lot of stuff, but then conda will ask you if you REALLY want to install `bwa`. Please take note of all the other things it has to install. Look closely, sometimes it may tell you it has to REMOVE things to be able to install what you want due to an incompatibility.
 
 
 Woohoo!
@@ -171,7 +171,7 @@ Ok so now we can install `BWA` with the following:
 ```
 (base) >$ conda install bwa
 ```
-Now lets check this one.
+Now let's check this one.
 
 ```
 (base) >$ bwa
@@ -182,7 +182,8 @@ Contact: Heng Li <lh3@sanger.ac.uk>
 
 Usage:   bwa <command> [options]
 
-Command: index         index sequences in the FASTA format
+Command: 
+	index         index sequences in the FASTA format
          mem           BWA-MEM algorithm
          fastmap       identify super-maximal exact matches
          pemerge       merge overlapping paired ends (EXPERIMENTAL)
@@ -222,22 +223,22 @@ Now try to run bwa.
 
 Command 'bwa' not found
 ```
-It's not there anymore.. Cool..
+It's not there anymore...Cool.
 
 ### 4.3 Install a particular **version** of a tool.
 
-Last time we installed samtools we got version 1.9 but we really wanted version 1.8. We can install version 1.8 pretty easily. We just tell Conda what version we want when we install it.
+Last time we installed samtools we got version 1.9, but we wanted version 1.8. We can install version 1.8 pretty easily. We tell Conda what version we want when we install it.
 
 ```
 (base) >$ conda install samtools==1.8
 ```
 notice the `==1.8`? This tells Conda to install a particular version and in this case 1.8.
 
-This is really handy sometimes.
+This is very handy sometimes.
 
-When you install this version, notice that Conda has to re-jig some of it's other installed programs? This happens a lot and it could effect other things you might have installed. That's where conda environments come in and we'll talk about them soon.
+When you install this version, notice that Conda has to re-jig some of it's other installed programs? This happens a lot, and it could affect other things you might have installed. That's where conda environments come in, and we'll talk about them soon.
 
-For now run `samtools --version` again.
+For now, run `samtools --version` again.
 
 ```
 (base) >$ samtools --version
@@ -252,7 +253,7 @@ Cool.
 
 Sometimes we want to upgrade a tool that is already installed. We can do this by using the `conda update <package-name>` command.
 
-Lets update samtools to it's latest version.
+Lets update samtools to it's the latest version.
 
 ```
 (base) >$ conda update samtools
@@ -271,7 +272,7 @@ Simples.
 
 ### 4.5 Find out what tools are installed.
 
-It's pretty easy, we just use the `conda list` command. It will tell you what is installed, which versions, build numbers and which channel it came from.
+It's pretty straightforward; we use the `conda list` command. It will tell you what is installed, which versions, build numbers and which channel it came from.
 
 ```
 (base) >$ conda list
@@ -327,17 +328,17 @@ zlib                      1.2.11               h7b6447c_3
 
 ## 5. How to handle version conflicts
 
-Just say you need two versions of samtools installed. Samtools is used a lot as a dependency in a lot of other tools and they sometimes need particular versions. What if you want to use `tool-a` which has a dependency for `samtools 1.8` and you also want to use `tool-b` which needs `samtools 1.9`. What do you do? You can't have samtools 1.8 & 1.9 at the same time can you?
+Just say you need two versions of samtools installed. Samtools is used a lot as a dependency in a lot of other tools, and they sometimes need particular versions. What if you want to use `tool-a` which has a dependency for `samtools 1.8` and you also want to use `tool-b` which needs `samtools 1.9`. What do you do? You can't have samtools 1.8 & 1.9 at the same time can you?
 
-**Yes you can!** You just need to install `tool-a` and `tool-b` in different and separate **environments** with their own set of dependencies that do not interact with one another!
+**Yes, you can!** You need to install `tool-a` and `tool-b` in different and separate **environments** with their own set of dependencies that do not interact with one another!
 
-To create a conda environment we use the `conda create` command. We will now look at how to use environments!
+To create a conda environment, we use the `conda create` command. We will now look at how to use environments!
 
 ## 6. How to use Conda environments
 
-Lets install a tool called `mlst` into it's own environment. It has a lot of dependencies and is quite a complex tool.
+Let's install a tool called `mlst` into its environment. It has a lot of dependencies and is quite a complex tool.
 
-First thing we need to do is create an *environment* for it.
+The first thing we need to do is create an *environment* for it.
 
 ### 6.1 Create a conda environment
 
@@ -351,11 +352,11 @@ This will create an environment space called `mlst_env` that we can now **activa
 
 Before we can use our new environment, we have to **activate** it. We use the activate command.
 
-If we have already activated a conda environment (including the `base` environment) we just have to use the `conda activate <environment-name>` command.
+If we have already activated a conda environment (including the `base` environment), we just have to use the `conda activate <environment-name>` command.
 
 However, if we haven't activated Conda yet and we know the name of the environment we want to activate then we have to source it just like we did for the original (base) environment. `source ~/miniconda3/bin/activate <environment-name>`.
 
-We have already got Conda activated so we switch to `mlst_env` as follows:
+We have already got Conda activated, so we switch to `mlst_env` as follows:
 
 ```
 (base) >$ conda activate mlst_env
@@ -381,7 +382,7 @@ Now that we have activated our environment, we can install tools into it.
 ```
 It will take quite a long time to install it as it has a LOT of dependencies.
 
-But it will happen and when it's finished we can check it out.
+But it will happen, and when it's finished, we can check it out.
 
 ```
 (mlst_env) >$ mlst --help
@@ -421,17 +422,17 @@ HOMEPAGE
   https://github.com/tseemann/mlst - Torsten Seemann
 ```
 
-We can manipulate what is installed in this environment in the same manner we did for the `(base)` environment.
+We can manipulate what is installed in this environment, in the same manner, we did for the `(base)` environment.
 
 ### 6.2 Create an environment and install tools into it at the same time
 
-The above was a few too many steps and as computer scientists we like typing less.. So..
+The above was a few too many steps, and as computer scientists, we like typing less. So...
 
-Lets create a new environment for version 1.8 of samtools as well as BWA and install them too.
+Let us create a new environment for version 1.8 of samtools as well as BWA and install them too.
 
 We can do it all with one command.
 
-First we need to exit the `(mlst_env)` environment and go back to the `(base)` environment.
+First, we need to exit the `(mlst_env)` environment and go back to the `(base)` environment.
 
 ```
 (mlst_env) >$ conda deactivate
@@ -450,4 +451,4 @@ Cool huh?
 
 ## The End.
 
-Well, that's it. Hopefully you now understand how to use conda and conda environments to install and use all of your favourite tools!
+Well, that's it. Hopefully, you now understand how to use conda and conda environments to install and use all of your favourite tools!
