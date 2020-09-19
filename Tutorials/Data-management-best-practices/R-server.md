@@ -20,7 +20,7 @@
   ![](/Tutorials/images/RTOOLS.png)
 
  ##### select global options
-   ![](Tutorials/images/rsesio.png)
+   ![](/Tutorials/images/rsesio.png)
 
 ##### Change your work directory to your folder in scrath
-   ![](/Tutorials/images/change path.png)
+   ![](/Tutorials/images/changepath.png)
