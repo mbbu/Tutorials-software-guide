@@ -28,6 +28,6 @@
 
 ## Importing data
  ##### import data 
-   ![](/Tutorials/images/path.png)
+   ![](/Tutorials/images/import.png)
  ##### change directory (make sure you have edit rights to your folder)
-  ![](/Tutorials/images/path.pn)
+  ![](/Tutorials/images/folder.png)
