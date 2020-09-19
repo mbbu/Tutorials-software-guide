@@ -23,4 +23,4 @@
    ![](/Tutorials/images/rsesio.png)
 
 ##### Change your work directory to your folder in scrath
-   ![](/Tutorials/images/changepath.png)
+   ![](/Tutorials/images/change path.png)
