@@ -24,3 +24,10 @@
 
 ##### Change your work directory to your folder in scrath
    ![](/Tutorials/images/path.png)
+
+
+## Importing data
+ ##### import data 
+   ![](/Tutorials/images/path.png)
+ ##### change directory (make sure you have edit rights to your folder)
+  ![](/Tutorials/images/path.pn)
