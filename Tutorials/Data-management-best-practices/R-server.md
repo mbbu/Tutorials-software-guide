@@ -10,12 +10,17 @@
      
      
 ### Basic R session
- - Log into  studio 
- ![](/Tutorials/images/rstudiologin.png)
+
+ ##### Log into  studio 
  
- - go to tools 
-![](/Tutorials/images/RTOOLS.png)
- - go to tools 
- ![](/Tutorials/images/RTOOLS.png)
- - Change your work directory to your folder in scrath
- ![](/Tutorials/images/RTOOLS.png)
+   ![](/Tutorials/images/rstudiologin.png)
+ 
+ ##### go to tools 
+ 
+  ![](/Tutorials/images/RTOOLS.png)
+
+ ##### select global options
+   ![](Tutorials/images/rsesio.png)
+
+##### Change your work directory to your folder in scrath
+   ![](/Tutorials/images/change path.png)
