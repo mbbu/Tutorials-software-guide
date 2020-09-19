@@ -14,4 +14,8 @@
  ![](/Tutorials/images/rstudiologin.png)
  
  - go to tools 
-![](/Tutorials/images/rstudiologin.png)
+![](/Tutorials/images/RTOOLS.png)
+ - go to tools 
+ ![](/Tutorials/images/RTOOLS.png)
+ - Change your work directory to your folder in scrath
+ ![](/Tutorials/images/RTOOLS.png)
