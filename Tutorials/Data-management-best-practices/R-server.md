@@ -10,4 +10,6 @@
      
      
 ### Basic R session
- - Log into  studio
+ - Log into  studio 
+ ![](/images/rtudio.png)
+ 
