@@ -8,4 +8,4 @@ At *icipe*, we host a serveral tools, pipelines and Platforms for Genomic data a
  2. [Data-management-best-practices](Tutorials/Data-management-best-practices/)
     - [R-Server](https://github.com/mbbu/Tutorials-software-guide/blob/master/Tutorials/Data-management-best-practices/R-server.md)
  3. [Running CCBGpipe](Tutorials/Running%20CCBGpipe/CCBGpipe.md)
- 4. [Running Cytoscape](/Tutorials-software-guide/blob/master/Tutorials/Cytoscape/running%20cytoscape.md)
+ 4. [Running Cytoscape](Tutorials/Cytoscape/running%20cytoscape.md)
