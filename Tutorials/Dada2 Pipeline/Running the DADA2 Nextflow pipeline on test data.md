@@ -1,6 +1,6 @@
 Connect to https://hpc01.icipe.org/rstudio/auth-sign-in and you can login with your `USERNAME` and the `RSTUDIO_PASSWORD` .
 
-ADA2 should be installed already
+DADA2 should be installed already
 ```
 > library("dada2")
 Loading required package: Rcpp
