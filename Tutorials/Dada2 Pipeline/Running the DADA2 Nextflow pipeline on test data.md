@@ -18,7 +18,7 @@ Looks OK.
 
 Go to terminal on your R studio GUI
 ```
-$ module load nextflow
+$ module load nextflow/20.04.1 
 ```
 
 Do the setup
