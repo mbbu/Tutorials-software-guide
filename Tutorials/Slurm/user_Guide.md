@@ -1,14 +1,13 @@
 
 # Slurm user guide
 
-SLURM is the queue manager used on the ICIPE HPC cluster. You **must** use SLURM to submit jobs to the cluster.
+SLURM is the queue manager used on the ICIPE HPC cluster. You are required to use SLURM to submit jobs to the cluster.
 
 All the commands presented in this guide are to be used from the host core.cluster.france-bioinformatique.fr
 
 ## SLURM partitions and nodes
 
-The ICIPE HPC cluster is organized into TWO SLURM partitions.
-Each partition gathers a set of compute nodes that have similar usage.
+The ICIPE HPC cluster is organized into TWO SLURM partitions. Each partition gathers a set of compute nodes that have similar usage.
 
 The default partition used by SLURM (fast) contains a huge number of nodes and is suitable for most jobs.
 
@@ -21,7 +20,6 @@ sinfo
 *Please note that you may not have the rights to use all partitions*
 
 To view all available nodes run :
-
 
 ```bash
 sinfo -Nl
@@ -37,14 +35,11 @@ They are two commands to submit a job to the cluster:
 
 ### Submit a job using `srun`
 
-To learn more about the `srun` command, see [the official documentation](https://slurm.schedmd.com/srun.html)
+To learn more about the `srun` command, see [the official documentation](https://slurm.schedmd.com/srun.html). You can also use `srun -h` to get the options.
 
 #### Usage
 
-The job will start immediately after you execute the srun command.
-The outputs are returned to the terminal.
-You have to wait until the job has terminated before starting a new job.
-This works with ANY command.
+The job will start immediately after you execute the `srun` command. The outputs are returned to the terminal. You have to wait until the job has terminated before starting a new job. This works with ANY command.
 
 Example:
 
@@ -63,19 +58,17 @@ srun --mem 20GB --pty R
 
 ### Submit a job using `sbatch`
 
-To learn more about the `sbatch` command, see [the official documentation](https://slurm.schedmd.com/sbatch.html)
+To learn more about the `sbatch` command, see [the official documentation](https://slurm.schedmd.com/sbatch.html), or use `sbatch -h`. 
 
 #### Usage
 
-The job starts when resources are available.
-The command only returns the job id.
+The job starts when resources are available, and only returns the job id.
 The outputs are sent to file(s).
-This works ONLY with shell scripts. The batch script may be given to sbatch through a file name on the command line, or if no file name is specified, sbatch will read in a script from standard input.
+`sbatch` ONLY works with shell scripts. The batch script may be given to `sbatch` through a filename on the command line, or if no filename is specified, `sbatch` will read in a script from standard input.
 
 #### Batch scripts rules
 
-The script can contain srun commands. Each srun is a job step.
-The script must start with shebang (#!) followed by the path of the interpreter
+The script can contain `srun` commands. Each `srun` is a job step. The script must start with shebang (#!) followed by the path to the interpreter
 ```bash
 #!/bin/bash
 #!/usr/bin/env python
@@ -107,7 +100,7 @@ The scripts can contain slurm options just after the shebang but before the scri
 
 **Note** that the syntax `#SBATCH ` is important and doesn't contain any `!` (as in the Shebang)
 
-**Advice:** We recommend to set as many parameters as you can in the script to keep a track of your execution parameters for a future submission.
+**Advice:** We recommend setting as many parameters as you can in the script to keep track of your execution parameters for future submission.
 
 ### Execution parameters
 
@@ -132,10 +125,10 @@ Cf: `sinfo` to know which partitions are available.
 
 **`--mem=<size[units]>`**
 
-Specify the real memory required per node. The default units is `MB`
+Specify the real memory required per node. The default unit is `MB`
 (Default: 2GB)
 
-The job is killed if it exceeds the limit
+The job is killed if it exceeds the limit.
 
 Note that you can use the variable `$SLURM_MEM_PER_NODE` in the command line to synchronize the software settings and the resource allocated.
 
@@ -151,7 +144,7 @@ Acceptable time formats include "minutes", "minutes:seconds", "hours:minutes:sec
 
 Request a number of CPUs (default 1)
 
-Note that you can use the variable `$SLURM_CPUS_PER_TASK` in the command line to avoid mistake between the resource allocated and the job.
+Note that you can use the variable `$SLURM_CPUS_PER_TASK` in the command line to avoid mistakes between the resource allocated and the job.
 
 ```bash
 #!/bin/bash
@@ -174,12 +167,10 @@ For beginners, we suggest to use `nano`, which has restricted functionalities bu
 nano slurm_random.sh
 ```
 
-2. Copy/Paste the following script which is for submitting mafft jot to the main hpc01 cluster :
+2. Copy/Paste the following script, which is for submitting mafft job to the main hpc01 cluster :
 
 
 ```
-
-
 #!/usr/bin/env bash
 #SBATCH -p qbatch
 #SBATCH --nodes=1
@@ -193,7 +184,7 @@ module load mafft/7.475
 ​
 mafft --auto --reorder --preservecase /mnt/nfs/home/admin/Data/Raw_Data/mtDNA46K.fasta > /mnt/nfs/admin/gatua/Data/Derived_Data/mtDNA46Kalign.fasta
 ​
-echo "Successfully aligned admin"
+echo "Successfully aligned admin."
 ```
 Press Ctrl-x to exit nano, then "Y" when nano asks you whether the modified buffer should be saved, then press the "Enter" key to confirm the file name.
 
@@ -216,10 +207,7 @@ Since this script is running a very basic task, the results should promptly be a
 
 Check the output files with `ls` and `head`.
 
-Note: these commands cannot  be run on the login node since they are consuming very alot computing resources.
-
-
-
+Note: these commands cannot be run on the login node since they consume massive compute resources.
 
 
 
