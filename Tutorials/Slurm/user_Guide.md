@@ -182,7 +182,8 @@ module load mafft/7.475
 ​
 # Executing the alignment
 ​
-mafft --auto --reorder --preservecase /mnt/nfs/home/admin/Data/Raw_Data/mtDNA46K.fasta > /mnt/nfs/admin/gatua/Data/Derived_Data/mtDNA46Kalign.fasta
+#mafft --auto --reorder --preservecase /mnt/nfs/home/admin/Data/Raw_Data/mtDNA46K.fasta > /mnt/nfs/admin/admin/Data/Derived_Data/mtDNA46Kalign.fasta
+#use script for refence only 
 ​
 echo "Successfully aligned admin."
 ```
