@@ -11,3 +11,4 @@ At *icipe*, we host a serveral tools, pipelines and Platforms for Genomic data a
  4. [Running Cytoscape](Tutorials/Cytoscape/running%20cytoscape.md)
  5. [Running DADA2 Pipeline](/Tutorials/Dada2%20Pipeline/Running%20the%20DADA2%20Nextflow%20pipeline%20on%20test%20data.md)
  6.  [Slurm user Guide](https://github.com/mbbu/Tutorials-software-guide/blob/master/Tutorials/Slurm/user_Guide.md)
+ 7.  [running Genesis](https://github.com/mbbu/Tutorials-software-guide/blob/master/Tutorials/genesis/genesisi.md)
